@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="notekeeper.MainLayoutController">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="100.0" minWidth="100.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ToolBar prefHeight="40.0" prefWidth="175.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <Button fx:id="addNewNoteBtn" mnemonicParsing="false" onAction="#addNewNoteBtnAction" />
+                    </items>
+                  </ToolBar>
+                  <ListView fx:id="listView" layoutY="40.0" minHeight="100.0" minWidth="100.0" prefHeight="358.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="notePane" minHeight="100.0" minWidth="200.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ToolBar prefHeight="40.0" prefWidth="417.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <items>
+                        <ToggleButton fx:id="ltrBtn" mnemonicParsing="false" onAction="#ltrBtnAction" />
+                        <ToggleButton fx:id="rtlBtn" mnemonicParsing="false" onAction="#rtlBtnAction" />
+                        <ComboBox fx:id="fontCombo" prefWidth="150.0" />
+                        <ComboBox fx:id="sizeCombo" prefHeight="25.0" prefWidth="56.0" />
+                     </items>
+                  </ToolBar>
+                  <TextArea fx:id="noteArea" layoutY="65.0" prefHeight="333.0" prefWidth="417.0" promptText="Write Something" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0" />
+                  <TextField fx:id="titleTextField" layoutY="40.0" prefHeight="25.0" prefWidth="277.0" promptText="Title" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="40.0" />
+                  <DatePicker fx:id="datePicker" layoutX="278.0" layoutY="40.0" prefHeight="25.0" prefWidth="140.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="40.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
