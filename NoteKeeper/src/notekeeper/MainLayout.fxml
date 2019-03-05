@@ -20,6 +20,7 @@
                   <ToolBar prefHeight="40.0" prefWidth="175.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
                       <Button fx:id="addNewNoteBtn" mnemonicParsing="false" onAction="#addNewNoteBtnAction" />
+                        <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteBtnAction" />
                     </items>
                   </ToolBar>
                   <ListView fx:id="listView" layoutY="40.0" minHeight="100.0" minWidth="100.0" prefHeight="358.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
