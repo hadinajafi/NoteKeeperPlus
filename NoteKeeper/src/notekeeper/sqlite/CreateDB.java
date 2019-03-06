@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -20,6 +21,7 @@ public class CreateDB {
     public CreateDB(String fileName){
         filepath = ROOT + fileName;
         createDB();
+        createNewTable();
     }
     public String getPath(){
         return filepath;
@@ -34,6 +36,24 @@ public class CreateDB {
             }
         }catch(SQLException e){
             System.err.println(e.getMessage());
+        }
+    }
+    
+    private void createNewTable(){
+        String url = "jdbc:sqlite:" + filepath;
+        String sql = "CREATE TABLE IF NOT EXIST notes (\n"
+                + "id INTEGER PRIMARY KEY, "
+                + "title TEXT, "
+                + "body TEXT, "
+                + "date TEXT, "
+                + "font TEXT NOT NULL, "
+                + "size INTEGER NOT NULL, "
+                + "dir TEXT NOT NULL;";
+        try (Connection conn = DriverManager.getConnection(url)){
+            Statement stmt = conn.createStatement();
+            stmt.execute(sql);
+        }catch(SQLException e){
+            e.printStackTrace();
         }
     }
 }
