@@ -17,9 +17,8 @@ import java.sql.Statement;
  */
 public class CreateDB {
     private final String filepath;
-    private static final String ROOT = System.getProperty("user.home") + "/.NoteKeeper/";
     public CreateDB(String fileName){
-        filepath = ROOT + fileName;
+        filepath = notekeeper.NoteKeeper.ROOT + fileName;
         createDB();
         createNewTable();
     }
@@ -42,7 +41,7 @@ public class CreateDB {
     private void createNewTable(){
         String url = "jdbc:sqlite:" + filepath;
         String sql = "CREATE TABLE IF NOT EXIST notes (\n"
-                + "id INTEGER PRIMARY KEY, "
+                + "id INTEGER PRIMARY KEY autoincrement, "
                 + "title TEXT, "
                 + "body TEXT, "
                 + "date TEXT, "
