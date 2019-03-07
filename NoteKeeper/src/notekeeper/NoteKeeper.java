@@ -17,6 +17,7 @@ import javafx.stage.Stage;
  */
 public class NoteKeeper extends Application {
 
+    public static final String ROOT = System.getProperty("user.home") + "/.NoteKeeper/";
     @Override
     public void start(Stage primaryStage) {
         try {
