@@ -16,10 +16,18 @@ import java.sql.SQLException;
  */
 public class DeleteNote {
 
-    public DeleteNote(String filePath) {
-        
+    /**
+     * 
+     * @param id <b>ID</b> is given <i>Integer</i> for delete the record in the database table. id is unique.
+     */
+    public DeleteNote(int id) {
+        DeleteNote(id);
     }
     
+    /**
+     * 
+     * @param id <b>ID</b> is given <i>Integer</i> for delete the record in the database table. id is unique.
+     */
     private void DeleteNote(int id){
         String url = "jdbc:sqlite:" + CreateDB.DBFILE;
         try(Connection c = DriverManager.getConnection(url)){
