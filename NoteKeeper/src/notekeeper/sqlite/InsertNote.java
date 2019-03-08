@@ -15,10 +15,28 @@ import java.sql.SQLException;
  * @author hadin
  */
 public class InsertNote {
-    
-    public InsertNote(String fileName){
-        
+    /**
+     * 
+     * @param title The <b>Title</b> of the note.
+     * @param body The <b>Body Text</b> of the note.
+     * @param date The <b>Date</b> of the modified file.
+     * @param font <b>Font</b> of the current file.
+     * @param size Font <i>size</i> of the body text.
+     * @param dir <b>Direction</b> of the file. Direction is right-to-left or left-to-right.
+     */
+    public InsertNote(String title, String body, String date, String font, int size, String dir){
+        insertData(title, body, date, font, size, dir);
     }
+    
+    /**
+     * 
+     * @param title The <b>Title</b> of the note.
+     * @param body The <b>Body Text</b> of the note.
+     * @param date The <b>Date</b> of the modified file.
+     * @param font <b>Font</b> of the current file.
+     * @param size Font <b>size</b> of the body text.
+     * @param dir <b>Direction</b> of the file. Direction is right-to-left or left-to-right.
+     */
     private void insertData(String title, String body, String date, String font, int size, String dir){
         String url = "jdbc:sqlite:" + CreateDB.DBFILE;
         try(Connection c = DriverManager.getConnection(url)){
