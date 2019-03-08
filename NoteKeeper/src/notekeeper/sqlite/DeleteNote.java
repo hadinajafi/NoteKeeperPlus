@@ -15,14 +15,13 @@ import java.sql.SQLException;
  * @author hadin
  */
 public class DeleteNote {
-    private final String filePath;
 
     public DeleteNote(String filePath) {
-        this.filePath = notekeeper.NoteKeeper.ROOT + filePath;
+        
     }
     
     private void DeleteNote(int id){
-        String url = "jdbc:sqlite:" + filePath;
+        String url = "jdbc:sqlite:" + CreateDB.DBFILE;
         try(Connection c = DriverManager.getConnection(url)){
             String sql = "DELETE FORM notes WHERE id = ?";
             PreparedStatement ps = c.prepareStatement(sql);
