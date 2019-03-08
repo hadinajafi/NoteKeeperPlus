@@ -15,12 +15,12 @@ import java.sql.SQLException;
  * @author hadin
  */
 public class InsertNote {
-    private final String filePath ;
+    
     public InsertNote(String fileName){
-        filePath = notekeeper.NoteKeeper.ROOT + fileName;
+        
     }
     private void insertData(String title, String body, String date, String font, int size, String dir){
-        String url = "jdbc:sqlite:" + filePath;
+        String url = "jdbc:sqlite:" + CreateDB.DBFILE;
         try(Connection c = DriverManager.getConnection(url)){
             String sql = "INSERT INTO notes (title, body, date, font, size, dir) VALUES (?, ?, ?, ?, ?, ?);";
             PreparedStatement ps = c.prepareStatement(sql);
