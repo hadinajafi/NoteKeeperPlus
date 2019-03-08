@@ -25,6 +25,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
+import notekeeper.sqlite.CreateDB;
 
 /**
  * @author hadin
@@ -64,7 +65,7 @@ public class MainLayoutController implements Initializable {
     // add new note, also add new entry in the list
     @FXML
     void addNewNoteBtnAction(ActionEvent event) {
-
+        
     }
     
     @FXML
@@ -103,6 +104,7 @@ public class MainLayoutController implements Initializable {
         addNewNoteBtn.setGraphic(new ImageView(new Image("/icons/plus.png")));
         rtlBtn.setGraphic(new ImageView(new Image("/icons/rtl.png")));
         ltrBtn.setGraphic(new ImageView(new Image("/icons/ltr.png")));
+        deleteBtn.setGraphic(new ImageView(new Image("/icons/bin.png")));
     }
 
     /**
@@ -151,6 +153,8 @@ public class MainLayoutController implements Initializable {
         if (listView.getSelectionModel().isEmpty()) {
             notePane.setDisable(true);
         }
+        //create db if not exist
+        CreateDB db = new CreateDB();
     }
 
 }
